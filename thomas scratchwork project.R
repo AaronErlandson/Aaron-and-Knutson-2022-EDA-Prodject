@@ -1,5 +1,6 @@
 library(googlesheets4)
 
+#Lines 3 through 17 are Tutorial for google sheets
 #Read google sheets data into R Tutorial for google sheets
 x <- read_sheet('https://docs.google.com/spreadsheets/d/1J9-ZpmQT_oxLZ4kfe5gRvBs7vZhEGhSCIpNS78XOQUE/edit?usp=sharing')
 
