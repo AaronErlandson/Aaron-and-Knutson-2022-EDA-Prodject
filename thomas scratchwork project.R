@@ -61,4 +61,4 @@ ggplot(data = minnesotayearlysamplingdata) +
 #This also doesn't work correctly it continues to just give
 #one "Zones Tested"
 ggplot(data = minnesotayearlysamplingdata) + 
-  geom_point(mapping = aes(x = Year, y = Positive, size = 'Zones Tested'))
+  geom_point(mapping = aes(x = Year, y = Positive, size = `Zones Tested`))
