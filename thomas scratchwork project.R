@@ -1,5 +1,5 @@
 library(googlesheets4)
-
+library(tidyverse)
 #Lines 3 through 17 are Tutorial for google sheets
 #Read google sheets data into R Tutorial for google sheets
 x <- read_sheet('https://docs.google.com/spreadsheets/d/1J9-ZpmQT_oxLZ4kfe5gRvBs7vZhEGhSCIpNS78XOQUE/edit?usp=sharing')
@@ -17,7 +17,10 @@ df <- read_sheet('1J9-ZpmQT_oxLZ4kfe5gRvBs7vZhEGhSCIpNS78XOQUE')
 df
 
 #Read google sheets data into R
-cwdpositive <- read_sheet('1bazVSrrfMWM6scjJzAvDXBw-EeX2BpK1BI1FRdx5GCk')
+cwdpositive <- read_sheet('1bazVSrrfMWM6scjJzAvDXBw-EeX2BpK1BI1FRdx5GCk') %>% 
+  rename(permitarea=`Permit\nArea`, sampleacquisition=`Sample\nAcquisition`) %>% 
+  mutate(permitarea=factor(permitarea), Year = as.integer(Year)) %>% 
+  print()
 
 cwdtestingminnesota <- read_sheet('https://docs.google.com/spreadsheets/d/1ABj6j_GxRa1dpEzdP5ipZHaDyJgaZrYWtITForcFfW4/edit#gid=0')
 
@@ -35,10 +38,43 @@ ggplot(data = cwdpositive) +
 ggplot(data = cwdpositive) + 
   geom_bar(mapping = aes(x = Year, fill = Sex))
 
-#These Permit Area and Sample Acquisition did not fill correctly
-#Ask Merkord
+cwdpositive %>%
+  count(Year) %>%
+  ggplot() + 
+  geom_col(mapping = aes(x = Year, y = n))
+
 ggplot(data = cwdpositive) + 
-  geom_bar(mapping = aes(x = Year, fill = `Permit\nArea`))
+  geom_bar(mapping = aes(x = Year))
+
+minnesotayearlysamplingdata %>% 
+  separate(Year, into = c("start year", "Year"), sep = "-") %>% 
+  group_by(Year) %>% 
+  summarise(Positive = sum(Positive), Samples = sum(Samples)) %>% 
+  mutate(`Positivity Rate`=Positive/Samples) %>% 
+  pivot_longer(cols = c(Samples, Positive, `Positivity Rate`), 
+               names_to = "Variable", values_to = "Value") %>% 
+  mutate(Variable=as_factor(Variable)) %>% 
+  ggplot(aes(x=Year, y=Value, fill = Variable))+
+  geom_col()+
+  facet_wrap(~Variable, scales = "free_y")+
+  guides(fill ="none")+
+  labs(x=NULL, y=NULL)
+  
+#These Permit Area and Sample Acquisition did not fill correctly
+#Ask M %>% erkord
+#This works, change n to something with a different name
+cwdpositive %>%
+  count(Year, permitarea) %>% 
+  ggplot() + 
+  geom_col(mapping = aes(x = Year, y = n, fill = permitarea))
+
+cwdpositive %>%
+  count(Year, permitarea) %>% 
+  ggplot(aes(x=Year, y = n, color = permitarea)) + 
+  geom_point()+
+  geom_line()+
+  labs(y="Positive Cases")
+  
 
 ggplot(data = cwdpositive) + 
   geom_bar(mapping = aes(x = Year, fill = `Sample\nAcqui~`))
@@ -54,7 +90,7 @@ ggplot(data = minnesotayearlysamplingdata) +
 ggplot(data = minnesotayearlysamplingdata) + 
   geom_point(mapping = aes(x = Year, y = Positive))
 
-#Again this doesn't work and makes all zones red?
+#This works but has typos in the data
 ggplot(data = minnesotayearlysamplingdata) + 
   geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`))
 
@@ -65,8 +101,9 @@ ggplot(data = minnesotayearlysamplingdata) +
 
 #This doesn't work
 ggplot(data = cwdpositive) + 
-  geom_point(mapping = aes(x = Year, size = Age))
+  geom_point(mapping = aes(x = Year, shape = Age, color = Age))
 
+#This stuff is basically good for now
 library(tidyverse)
 library(urbnmapr)
 
@@ -126,5 +163,9 @@ captive <- counties %>%
 ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
   geom_polygon(color = "#ffffff", size = 0.05) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  guides(fill="none") +
   labs(fill = "Captive Infections",
-       title="Natonwide County Distribution of Infections in Captive Cervids")
+       title="Natonwide County Distribution of Infections in Captive Cervids")+
+  theme_grey(base_size = 24)
+ggsave(filename = "output/County Wild Cervids.png",width = 14, height = 9,
+       units = "in", dpi = 600)
