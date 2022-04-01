@@ -116,5 +116,15 @@ countydata <- counties %>%
 ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
   geom_polygon(color = "#ffffff", size = 0.15) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
-  labs(fill = "Infections?",
-       title="Distribution of infections in captive cervids")
+  labs(fill = "Wild Infections",
+       title="Nationwide County Distribution of Infections in Wild Cervids")
+
+captive <- counties %>%
+  left_join(captivecountydata %>%
+              mutate( County=paste0(County," County")), 
+            by=c("state_name"="State", "county_name"="County"))
+ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
+  geom_polygon(color = "#ffffff", size = 0.05) +
+  coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  labs(fill = "Captive Infections",
+       title="Natonwide County Distribution of Infections in Captive Cervids")
