@@ -7,7 +7,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
-## Title
+## Exploring Chronic Wasting Disease in Minnesota and the United States
 
 Authors
 
@@ -19,7 +19,51 @@ Minnesota State University Moorhead Biosciences Department
 
 ## Introduction
 
+-   Chronic Wasting Disease (CWD)
+
+    -   Always fatal, contagious, prion disease, or transmissible spongiform encephalopathy (TSE)
+
+    -   Caused by a misfolded prion protein
+
+    -   Spread through direct contact with bodily fluid, and indirectly through environmental contamination of soil, food, and water
+
+    -   Characterized by emaciation, abnormal behavior, loss of bodily functions, and eventually death
+
+    -   Has an incubation of over a year, and symptoms develop slowly over time
+
+-   Other TSE's
+
+    -   Bovine spongiform encephalopathy (mad cow disease) in cattle
+
+    -   Creutzfeldt-Jakob disease in humans
+
+-   First discovered in Colorado
+
+    -   First positive case of captive cervids in 1967
+
+    -   First positive case of wild cervids in 1981
+
+-   Sample collection
+
+    -   Testing lymph node samples is the most common way to test a cervid for potential CWD
+
+        -   Testing the brain is also used, but less common
+
+    -   Samples are generally acquired through agency culling, roadkill sampling, and hunter submitted samples
+
 ## Methods
+
+-   To collect our Minnesota data, we went to the Minnesota Department of Natural Resources website and used their public testing results.
+
+    -   We gathered data for the total samples and total positive samples taken, the age and sex of the deer, the zone that the deer was taken in, and how the deer were harvested.
+
+        -   Once we collected all our data, we gathered it into a Google Sheet, transferred it into RStudio and used RStudio to analyze our data and create our graphs.
+
+-   To collect our country wide data, we went to each state's Department of Natural Resources website, and used their public testing results.
+
+    -   We gathered data for the total samples taken, total positive, the species of the deer, and the year and state the sample was taken in.
+
+        -   Once we collected all of our data, we gathered it into a Google Sheet, combined all of the data from all of the analyzed states into one table, transferred it into RStudio, and used RStudio to analyze our data and create our graphs.
 
 ## Results
 
