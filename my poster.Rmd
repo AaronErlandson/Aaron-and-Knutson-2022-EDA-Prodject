@@ -21,7 +21,9 @@ Minnesota State University Moorhead Biosciences Department
 
 -   Chronic Wasting Disease (CWD)
 
-    -   Always fatal, contagious, prion disease, or transmissible spongiform encephalopathy (TSE)
+    -   Always fatal, contagious, prion disease, or transmissible spongiform encephalopathy (TSE); other TSE's incude ....
+
+    -   Affects memebers of the cervid family (deer elk)
 
     -   Caused by a misfolded prion protein
 
@@ -37,11 +39,15 @@ Minnesota State University Moorhead Biosciences Department
 
     -   Creutzfeldt-Jakob disease in humans
 
+    -   move this to top
+
 -   First discovered in Colorado
 
     -   First positive case of captive cervids in 1967
 
     -   First positive case of wild cervids in 1981
+
+    -   add total states found in
 
 -   Sample collection
 
@@ -51,13 +57,25 @@ Minnesota State University Moorhead Biosciences Department
 
     -   Samples are generally acquired through agency culling, roadkill sampling, and hunter submitted samples
 
+-   Potential to be transmitted to humans
+
+    -   As a result of this, states monitor
+
+    -   This spread is a concern
+
+-   thIS DISEASE IS 100% fatal
+
+    -   Move to before sampling
+
+    -   important for maintainting healthy deer populations
+
 ## Methods
 
 -   To collect our Minnesota data, we went to the Minnesota Department of Natural Resources website and used their public testing results.
 
     -   We gathered data for the total samples and total positive samples taken, the age and sex of the deer, the zone that the deer was taken in, and how the deer were harvested.
 
-        -   Once we collected all our data, we gathered it into a Google Sheet, transferred it into RStudio and used RStudio to analyze our data and create our graphs.
+        -   Once we collected all our data, we gathered it into a Google Sheet, read it into RStudio and used R and RStudio to analyze our data and create our graphs.
 
 -   To collect our country wide data, we went to each state's Department of Natural Resources website, and used their public testing results.
 
@@ -67,11 +85,69 @@ Minnesota State University Moorhead Biosciences Department
 
 ## Results
 
+-   Minnesota bullet points describing figures
+
+-   jshjkds
+
+-   sdiufhsoduf
+
+-   ufh
+
+```{r}Code for making our graphs}
+
+```
+
+Figure Legend
+
+```{r}Code for graph}
+
+```
+
+Figure Legend
+
+-   Bullet points for USA figures
+
+-   sd
+
+-   sdsd
+
 ```{r}
 
 ```
 
+Figure Legends
+
+```{r}
+
+```
+
+Figure Legends
+
 ## Discussion
+
+-   Data Acquisition
+
+    -   Collecting data for each state was difficult at times. Many states had a lack of total sampling data and missing sampling year. Many states also presented their data in different ways, so it was difficult at times to format the data for each state the same way.
+
+        -   We could not include Idaho in our data set due to a lack of provided data.
+
+    -   However, from the data we were able to gather were able to create a broad picture of the landscape of CWD in both Minnesota and the United States as a whole.
+
+-   Sample Acquisition
+
+    -   While we were gathering our Minnesota positive case data, we discovered that the majority of the samples were obtained from samples collected from hunters.
+
+        -   We also found this trend in the few states where sample acquisition methods was provided.
+
+    -   This shows the importance of hunting and the submission collected samples from hunters in tracking the progress of CWD.
+
+    -   Based on our data, state agencies could encourage hunters to submit samples from their harvested deer in order to increasee the amount of samples available for testing.
+
+-   Landscape of CWD in the United States
+
+    -   Based on our mapping of CWD cases across the united states, we found the the majority of positive cases were found in the Western and Midwestern states, with positive cases slowly appearing in the Southern and Eastern states.
+
+    -   Add discussion of total sampling and positive cases increasing cross the country over time
 
 ## References
 
@@ -81,4 +157,4 @@ Minnesota State University Moorhead Biosciences Department
 
 ## Acknowledgements
 
-We would like to thank and acknowledge Dr. Merkord for his help and guidance on our project.
+We would like to thank and acknowledge Dr. Chris Merkord for his help and guidance on our project.
