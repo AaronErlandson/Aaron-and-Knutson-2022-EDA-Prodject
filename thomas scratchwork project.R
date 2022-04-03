@@ -1,20 +1,6 @@
 library(googlesheets4)
 library(tidyverse)
-#Lines 3 through 17 are Tutorial for google sheets
-#Read google sheets data into R Tutorial for google sheets
-x <- read_sheet('https://docs.google.com/spreadsheets/d/1J9-ZpmQT_oxLZ4kfe5gRvBs7vZhEGhSCIpNS78XOQUE/edit?usp=sharing')
 
-#Reads data into R
-df <- read_sheet('https://docs.google.com/spreadsheets/d/1J9-ZpmQT_oxLZ4kfe5gRvBs7vZhEGhSCIpNS78XOQUE/edit?usp=sharing')
-
-#Prints the data
-df
-
-#Reads the data with Sheet ID into R
-df <- read_sheet('1J9-ZpmQT_oxLZ4kfe5gRvBs7vZhEGhSCIpNS78XOQUE')
-
-#Prints the data
-df
 
 #Read google sheets data into R
 cwdpositive <- read_sheet('1bazVSrrfMWM6scjJzAvDXBw-EeX2BpK1BI1FRdx5GCk') %>% 
@@ -22,21 +8,24 @@ cwdpositive <- read_sheet('1bazVSrrfMWM6scjJzAvDXBw-EeX2BpK1BI1FRdx5GCk') %>%
   mutate(permitarea=factor(permitarea), Year = as.integer(Year)) %>% 
   print()
 
-cwdtestingminnesota <- read_sheet('https://docs.google.com/spreadsheets/d/1ABj6j_GxRa1dpEzdP5ipZHaDyJgaZrYWtITForcFfW4/edit#gid=0')
-
-wisconsindata  <- read_sheet('https://docs.google.com/spreadsheets/d/1a92jEHh5HxLY88B4ui8aZ7j140nuSk2W2FH43TLHYt4/edit#gid=0')
 
 distributionofcwdinunitedstates <- read_sheet('https://docs.google.com/spreadsheets/d/1AJFJeUI25nDAGxogKNd7oA70r1roLoU92hv9408OR6Q/edit#gid=0')
 
 minnesotayearlysamplingdata <- read_sheet  ('https://docs.google.com/spreadsheets/d/1ABj6j_GxRa1dpEzdP5ipZHaDyJgaZrYWtITForcFfW4/edit#gid=0')                                            
 
-#This works
+#This works MN Yearly Cases by Age
 ggplot(data = cwdpositive) + 
-  geom_bar(mapping = aes(x = Year, fill = Age))
+  geom_bar(mapping = aes(x = Year, fill = Age))+
+  labs(y="Positive Cases", title = "MN Yearly Cases by Age")
+ggsave(filename = "output/MN Yearly Cases by Age.png",width = 5, height = 3,
+       units = "in", dpi = 400)
 
-#This works
+#This works MN Yearly Cases by Sex
 ggplot(data = cwdpositive) + 
-  geom_bar(mapping = aes(x = Year, fill = Sex))
+  geom_bar(mapping = aes(x = Year, fill = Sex))+
+  labs(y="Positive Cases", title = "MN Yearly Cases by Sex")
+ggsave(filename = "output/MN Yearly Cases by Sex.png",width = 5, height = 3,
+       units = "in", dpi = 400)
 
 cwdpositive %>%
   count(Year) %>%
@@ -45,7 +34,7 @@ cwdpositive %>%
 
 ggplot(data = cwdpositive) + 
   geom_bar(mapping = aes(x = Year))
-
+#3 Graph Thing
 minnesotayearlysamplingdata %>% 
   separate(Year, into = c("start year", "Year"), sep = "-") %>% 
   group_by(Year) %>% 
@@ -58,16 +47,21 @@ minnesotayearlysamplingdata %>%
   geom_col()+
   facet_wrap(~Variable, scales = "free_y")+
   guides(fill ="none")+
-  labs(x=NULL, y=NULL)
-  
-#These Permit Area and Sample Acquisition did not fill correctly
-#Ask M %>% erkord
-#This works, change n to something with a different name
+  labs(x=NULL, y=NULL, title = "Total Samples Collected, Positive Cases collected, and Positivity Rate")
+ggsave(filename = "output/MN Total Samples, Positive Cases, Positivity Rate.png",width = 7, height = 3,
+       units = "in", dpi = 400)
+
+
+#This works, MN Yearly Cases by Permit Area
 cwdpositive %>%
   count(Year, permitarea) %>% 
   ggplot() + 
-  geom_col(mapping = aes(x = Year, y = n, fill = permitarea))
+  geom_col(mapping = aes(x = Year, y = n, fill = permitarea))+
+  labs(y="Positive Cases", title = "MN Yearly Cases by Permit Area", fill = "Permit Area")
+ggsave(filename = "output/MN Yearly Cases by Permit Area.png",width = 5, height = 3,
+       units = "in", dpi = 400)
 
+#Scatter Plot with Lines MN Yearly Cases by Permit Area, Works not using
 cwdpositive %>%
   count(Year, permitarea) %>% 
   ggplot(aes(x=Year, y = n, color = permitarea)) + 
@@ -79,9 +73,6 @@ cwdpositive %>%
 ggplot(data = cwdpositive) + 
   geom_bar(mapping = aes(x = Year, fill = `Sample\nAcqui~`))
 
-ggplot(data = cwdpositive) + 
-  geom_bar(mapping = aes(x = Year, fill = `Sample\nAcqui~`), position = "dodge")
-
 #This geom_bar is not great for this data set:
 ggplot(data = minnesotayearlysamplingdata) + 
   geom_bar(mapping = aes(x = Year, fill = Positive))
@@ -90,9 +81,20 @@ ggplot(data = minnesotayearlysamplingdata) +
 ggplot(data = minnesotayearlysamplingdata) + 
   geom_point(mapping = aes(x = Year, y = Positive))
 
-#This works but has typos in the data
+#This works Dots are small
 ggplot(data = minnesotayearlysamplingdata) + 
-  geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`))
+  geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`, size = 2))+
+  labs(y="Positive Cases", title = "MN Yearly Cases by Sample Collection Zones", fill = "Permit Area", size = NULL)
+ggsave(filename = "output/MN Yearly Cases by Collection Zones.png",width = 5, height = 3,
+       units = "in", dpi = 400)
+
+#Bar Chart of Zones Tested
+minnesotayearlysamplingdata %>%
+  ggplot() + 
+  geom_col(mapping = aes(x = Year, y = Positive, fill = `Zones Tested`))+
+  labs(y="Positive Cases", title = "MN Yearly Cases by Sample Collection Zone", fill = "Zones Tested",)
+ggsave(filename = "output/MN Yearly Cases by Sample Collection Zone.png",width = 5, height = 3,
+       units = "in", dpi = 400)
 
 #This also doesn't work correctly it continues to just give
 #one "Zones Tested"
@@ -117,22 +119,18 @@ counties %>%
   geom_polygon(fill = "grey", color = "#ffffff", size = 0.05) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45)
 
-ccdf <- get_urbn_map(map = "territories_counties")
-
-ccdf %>%
-  ggplot(aes(long, lat, group = group)) +
-  geom_polygon(fill = "grey", color = "#ffffff", size = 0.25) +
-  scale_x_continuous(limits = c(-141, -55)) +
-  scale_y_continuous(limits = c(24, 50)) +  
-  coord_map(projection = "albers", lat0 = 39, lat1 = 45)
-
+#This works, States infected Free Ranging
 states %>% 
   left_join(distributionofcwdinunitedstates, by = c("state_name"="State")) %>% 
   ggplot(mapping = aes(long, lat, group = group, fill = `Free-ranging cervids`)) +
   geom_polygon(color = "#ffffff", size = 0.25) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   labs(fill = "Infections?",
-       title="Distribution of infections in free ranging cervids")
+       title="Distribution of infections in free ranging cervids")+
+  theme_grey(base_size = 24)
+ggsave(filename = "output/State Wild Cervids.png",width = 11, height = 7,
+       units = "in", dpi = 600)
+  
 
 states %>% 
   left_join(distributionofcwdinunitedstates, by = c("state_name"="State")) %>% 
@@ -140,7 +138,10 @@ states %>%
   geom_polygon(color = "#ffffff", size = 0.25) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   labs(fill = "Infections?",
-       title="Distribution of infections in captive cervids")
+       title="Distribution of infections in captive cervids")+
+  theme_grey(base_size = 24)
+ggsave(filename = "output/State Captive Cervids.png",width = 11, height = 7,
+       units = "in", dpi = 600)
 library(googlesheets4)
 captivecountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1Bqnrw1BbulGervJO2zODaUC6wX49SRcCu2zdQ57sNXw/edit#gid=0')
 
@@ -151,10 +152,14 @@ countydata <- counties %>%
               mutate(Wild=1, County=paste0(County," County")), 
             by=c("state_name"="State", "county_name"="County"))
 ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
-  geom_polygon(color = "#ffffff", size = 0.15) +
+  geom_polygon(color = "#ffffff", size = 0.05) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
+  guides(fill="none")+
   labs(fill = "Wild Infections",
        title="Nationwide County Distribution of Infections in Wild Cervids")
+theme_grey(base_size = 24)
+ggsave(filename = "output/County Wild Cervids.png",width = 11, height = 7,
+       units = "in", dpi = 600)
 
 captive <- counties %>%
   left_join(captivecountydata %>%
@@ -165,7 +170,7 @@ ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   guides(fill="none") +
   labs(fill = "Captive Infections",
-       title="Natonwide County Distribution of Infections in Captive Cervids")+
+       title="Captive Cervid Infections by County")+
   theme_grey(base_size = 24)
-ggsave(filename = "output/County Wild Cervids.png",width = 14, height = 9,
+ggsave(filename = "output/County Captive Cervids.png",width = 11, height = 7,
        units = "in", dpi = 600)
