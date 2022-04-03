@@ -71,7 +71,10 @@ cwdpositive %>%
   
 
 ggplot(data = cwdpositive) + 
-  geom_bar(mapping = aes(x = Year, fill = `Sample\nAcqui~`))
+  geom_bar(mapping = aes(x = Year, fill = sampleacquisition))+
+  labs(y="Positive Cases", title = "MN Yearly Cases by Sample Acquisition Method", fill = "Sample Acquisition", size = NULL)
+ggsave(filename = "output/MN Yearly Cases by acquisition.png",width = 5, height = 3,
+       units = "in", dpi = 400)
 
 #This geom_bar is not great for this data set:
 ggplot(data = minnesotayearlysamplingdata) + 
@@ -84,6 +87,7 @@ ggplot(data = minnesotayearlysamplingdata) +
 #This works Dots are small
 ggplot(data = minnesotayearlysamplingdata) + 
   geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`, size = 2))+
+  theme(axis.text.x = element_text(angle = 90)) +
   labs(y="Positive Cases", title = "MN Yearly Cases by Sample Collection Zones", fill = "Permit Area", size = NULL)
 ggsave(filename = "output/MN Yearly Cases by Collection Zones.png",width = 5, height = 3,
        units = "in", dpi = 400)
@@ -92,6 +96,7 @@ ggsave(filename = "output/MN Yearly Cases by Collection Zones.png",width = 5, he
 minnesotayearlysamplingdata %>%
   ggplot() + 
   geom_col(mapping = aes(x = Year, y = Positive, fill = `Zones Tested`))+
+  theme(axis.text.x = element_text(angle = 90)) +
   labs(y="Positive Cases", title = "MN Yearly Cases by Sample Collection Zone", fill = "Zones Tested",)
 ggsave(filename = "output/MN Yearly Cases by Sample Collection Zone.png",width = 5, height = 3,
        units = "in", dpi = 400)
