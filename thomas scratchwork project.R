@@ -126,9 +126,9 @@ states %>%
   geom_polygon(color = "#ffffff", size = 0.25) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   labs(fill = "Infections?",
-       title="Distribution of infections in free ranging cervids")+
+       title="State Wild Cervid Infections")+
   theme_grey(base_size = 24)
-ggsave(filename = "output/State Wild Cervids.png",width = 11, height = 7,
+ggsave(filename = "output/State Wild Cervids.png",width = 8, height = 5,
        units = "in", dpi = 600)
   
 
@@ -138,15 +138,16 @@ states %>%
   geom_polygon(color = "#ffffff", size = 0.25) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   labs(fill = "Infections?",
-       title="Distribution of infections in captive cervids")+
+       title="Captive Cervid Infections")+
   theme_grey(base_size = 24)
-ggsave(filename = "output/State Captive Cervids.png",width = 11, height = 7,
+ggsave(filename = "output/State Captive Cervids.png",width = 8, height = 5,
        units = "in", dpi = 600)
 library(googlesheets4)
 captivecountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1Bqnrw1BbulGervJO2zODaUC6wX49SRcCu2zdQ57sNXw/edit#gid=0')
 
 wildcountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1kZsk7IcZDokeosX1HKxCdFl-Dp7uQa4y5KmcNyPrIoI/edit#gid=0')
 
+#Wild County Data, works, just need correct size.
 countydata <- counties %>%
   left_join(wildcountydata %>%
               mutate(Wild=1, County=paste0(County," County")), 
@@ -158,19 +159,19 @@ ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
   labs(fill = "Wild Infections",
        title="Nationwide County Distribution of Infections in Wild Cervids")
 theme_grey(base_size = 24)
-ggsave(filename = "output/County Wild Cervids.png",width = 11, height = 7,
+ggsave(filename = "output/County Wild Cervids.png",width = 8, height = 5,
        units = "in", dpi = 600)
 
+#Counties Captive, works
 captive <- counties %>%
   left_join(captivecountydata %>%
               mutate( County=paste0(County," County")), 
             by=c("state_name"="State", "county_name"="County"))
-ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
+ggplot(captive, mapping = aes(long, lat, group = group, fill = Count)) +
   geom_polygon(color = "#ffffff", size = 0.05) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
-  guides(fill="none") +
   labs(fill = "Captive Infections",
        title="Captive Cervid Infections by County")+
   theme_grey(base_size = 24)
-ggsave(filename = "output/County Captive Cervids.png",width = 11, height = 7,
+ggsave(filename = "output/County Captive Cervids.png",width = 8, height = 5,
        units = "in", dpi = 600)
