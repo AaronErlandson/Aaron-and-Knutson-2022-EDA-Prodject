@@ -214,7 +214,7 @@ Figure 15: (Right) U.S. counties containing infections in captive cervids
 
 -   Landscape of CWD in the United States
 
-    -   Based on our mapping of CWD cases across the united states, we found the the majority of positive cases were found in the Western and Midwestern states, with positive cases slowly appearing in the Southern and Eastern states.
+        Based on our mapping of CWD cases across the United States, we found that the majority of positive cases were found in the Western and Midwestern states, with positive cases slowly appearing in the Southern and Eastern states.
 
     -   Our results also show that the amount of positive CWD cases is increasing over time.
 
@@ -229,7 +229,7 @@ Figure 15: (Right) U.S. counties containing infections in captive cervids
 
         -   We could not include Idaho in our data set due to a lack of provided data.
 
-    -   However, from the data we were able to gather were able to create a broad picture of the landscape of CWD in both Minnesota and the United States as a whole.
+    -   Despite these limitations in the data, we were still able to paint a broad picture of the landscape of CWD in both Minnesota and the United States as a whole
 
 -   Sample Acquisition
 
@@ -237,7 +237,7 @@ Figure 15: (Right) U.S. counties containing infections in captive cervids
 
         -   We also found this trend in the few states where sample acquisition methods was provided.
 
-    -   This shows the importance of hunting and the submission collected samples from hunters in tracking the progress of CWD.
+    -   Hunters submitting their collected samples are important to tracking the progress of CWD.
 
     -   Based on our data, state agencies could encourage hunters to submit samples from their harvested deer in order to increase the amount of samples available for testing.
 
