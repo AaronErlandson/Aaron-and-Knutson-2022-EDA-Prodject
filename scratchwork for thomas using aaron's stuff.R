@@ -3,18 +3,15 @@ library(googlesheets4)
 usa_cwd <- read_sheet("https://docs.google.com/spreadsheets/d/18nwJNkR9APotdyceGLIBKdA8ktHZqGjZSj1FsKNT7KY/edit#gid=0")
 View(usa_cwd)
 
-# Scatter plot of total_positive_samples vs year
-ggplot(data = usa_cwd) +
-  geom_point(mapping =aes(x = year, y = total_positive_samples))
 
-# Scatter plot of total_collected_samples vs year
-ggplot(data = usa_cwd) +
-  geom_point(mapping =aes(x = year, y = total_collected_samples))
 
 # Bar chart of total_positive_samples vs year
 ggplot(data = usa_cwd,
        mapping = aes(x = year)) +
-  geom_col(mapping = aes(y = total_positive_samples), fill = "#a6192e")
+  geom_col(mapping = aes(y = total_positive_samples), fill = "#a6192e") +
+labs(y = "Total Positive Samples", title = "Total Positive Samples Per Year", x = "Year")
+ggsave(filename = "output/thomas total positive samples per year2.png",width = 5, height = 3,
+         units = "in", dpi = 400)
 
 # Bar chart of total_collected_samples vs year
 ggplot(data = usa_cwd,
@@ -25,11 +22,16 @@ ggplot(data = usa_cwd,
 ggplot(data = usa_cwd,
        mapping = aes(x = species)) +
   geom_col(mapping = aes(y = total_positive_samples), fill = "#a6192e")
+ggsave(filename = "output/thomas total positive samples per year by speciesgraph2.png",width = 8, height = 5,
+       units = "in", dpi = 400)
 
 # Bar chart showing species vs total_collected_samples
 ggplot(data = usa_cwd,
        mapping = aes(x = species)) +
   geom_col(mapping = aes(y = total_collected_samples), fill = "#a6192e")
+labs(x="Species", y="Total Collected Samples", title = "Total Collected Samples")
+ggsave(filename = "output/thomas USA Yearly Cases 3 graphs.png",width = 5, height = 3,
+       units = "in", dpi = 400)
 
 
 
@@ -97,9 +99,3 @@ ggplot(data = usa_cwd,
 ggsave(filename = "output/thomas total u.s. positive samples per year.png",width = 5, height = 3,
        units = "in", dpi = 400)
 
-#This works Dots are small
-ggplot(data = usa_cwd) + 
-  geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`, size = 2))+
-  labs(y="Positive Cases", title = "MN Yearly Cases by Sample Collection Zones", fill = "Permit Area", size = NULL)
-ggsave(filename = "output/MN Yearly Cases by Collection Zones.png",width = 5, height = 3,
-       units = "in", dpi = 400)

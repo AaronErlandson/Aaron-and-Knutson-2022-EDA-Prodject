@@ -69,7 +69,7 @@ cwdpositive %>%
   geom_line()+
   labs(y="Positive Cases")
   
-
+#Bar Chart sample acquisition
 ggplot(data = cwdpositive) + 
   geom_bar(mapping = aes(x = Year, fill = sampleacquisition))+
   labs(y="Positive Cases", title = "MN Yearly Cases by Sample Acquisition Method", fill = "Sample Acquisition", size = NULL)
@@ -86,7 +86,7 @@ ggplot(data = minnesotayearlysamplingdata) +
 
 #This works Dots are small
 ggplot(data = minnesotayearlysamplingdata) + 
-  geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`, size = 2))+
+  geom_point(mapping = aes(x = Year, y = Positive, color = `Zones Tested`))+
   theme(axis.text.x = element_text(angle = 90)) +
   labs(y="Positive Cases", title = "MN Yearly Cases by Sample Collection Zones", fill = "Permit Area", size = NULL)
 ggsave(filename = "output/MN Yearly Cases by Collection Zones.png",width = 5, height = 3,
@@ -101,10 +101,6 @@ minnesotayearlysamplingdata %>%
 ggsave(filename = "output/MN Yearly Cases by Sample Collection Zone.png",width = 5, height = 3,
        units = "in", dpi = 400)
 
-#This also doesn't work correctly it continues to just give
-#one "Zones Tested"
-ggplot(data = minnesotayearlysamplingdata) + 
-  geom_point(mapping = aes(x = Year, y = Positive, size = `Zones Tested`))
 
 #This doesn't work
 ggplot(data = cwdpositive) + 
