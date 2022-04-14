@@ -4,7 +4,7 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
+library(tidyverse)
 ```
 
 ## Exploring Chronic Wasting Disease in Minnesota and the United States
