@@ -1,33 +1,3 @@
----
-title: "Thomas Markdown Scratchwork"
-author: "Thomas Knutson"
-date: '2022-04-19'
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 ---
 output: github_document
@@ -110,7 +80,7 @@ Minnesota State University Moorhead Biosciences Department
 
 ## Results
 
-```{r}
+```{r read data, message=FALSE, warning=FALSE}
 #Thomas' stuff
 library(googlesheets4)
 library(tidyverse)
@@ -119,8 +89,8 @@ library(urbnmapr)
 #Read google sheets data into R
 cwdpositive <- read_sheet('1bazVSrrfMWM6scjJzAvDXBw-EeX2BpK1BI1FRdx5GCk') %>% 
   rename(permitarea=`Permit\nArea`, sampleacquisition=`Sample\nAcquisition`) %>% 
-  mutate(permitarea=factor(permitarea), Year = as.integer(Year)) %>% 
-  print()
+  mutate(permitarea=factor(permitarea), Year = as.integer(Year))
+
 
 distributionofcwdinunitedstates <- read_sheet('https://docs.google.com/spreadsheets/d/1AJFJeUI25nDAGxogKNd7oA70r1roLoU92hv9408OR6Q/edit#gid=0')
 
@@ -135,16 +105,6 @@ captivecountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1Bqnrw1B
 #Data for wild cases by county for national map
 wildcountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1kZsk7IcZDokeosX1HKxCdFl-Dp7uQa4y5KmcNyPrIoI/edit#gid=0')
 
-#Setting up stuff for urbanmapr data
-states %>%
-  ggplot(aes(long, lat, group = group)) +
-  geom_polygon(fill = "grey", color = "#ffffff", size = 0.25) +
-  coord_map(projection = "albers", lat0 = 39, lat1 = 45)
-
-counties %>%
-  ggplot(aes(long, lat, group = group)) +
-  geom_polygon(fill = "grey", color = "#ffffff", size = 0.05) +
-  coord_map(projection = "albers", lat0 = 39, lat1 = 45)
 
 #Figure 1
 #MN Yearly Cases by Permit Area
