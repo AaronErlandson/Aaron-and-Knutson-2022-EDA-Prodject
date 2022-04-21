@@ -125,8 +125,6 @@ Figure 5: State totals for total positive cases by sex per year.
 
 Figure 6: State totals for positive cases by sample acquisition per year
 
-    ## Warning: Removed 90 rows containing missing values (position_stack).
-
 ![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 Figure 7: Total samples collected across analyzed states per year
@@ -144,8 +142,6 @@ year.
 ![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 Figure 10: Total positive cases across analyzed states per year
-
-    ## Warning: Removed 90 rows containing missing values (position_stack).
 
 ![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 

@@ -1,10 +1,14 @@
-
 ---
 output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	cache=TRUE
+)
 library(tidyverse)
 ```
 
@@ -297,11 +301,10 @@ captive <- counties %>%
               mutate( County=paste0(County," County")), 
             by=c("state_name"="State", "county_name"="County"))
 ggplot(captive, mapping = aes(long, lat, group = group, fill = Count)) +
-  geom_polygon(color = "#ffffff", size = 0.05) +
+  geom_polygon(aes(color=Count)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
-  labs(fill = "Captive Infections",
-       title="Captive Cervid Infections by County")+
-  theme_grey(base_size = 24)
+  labs(fill = "Captive Infections", color="Captive Infections",
+       title="Captive Cervid Infections by County")
 ```
 
 Figure 15: (Right) U.S. counties containing infections in captive cervids
