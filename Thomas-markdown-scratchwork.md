@@ -169,7 +169,10 @@ cervids
 
 -   Landscape of CWD in the United States
 
-        Based on our mapping of CWD cases across the United States, we found that the majority of positive cases were found in the Western and Midwestern states, with positive cases slowly appearing in the Southern and Eastern states.
+    Based on our mapping of CWD cases across the United States, we found
+    that the majority of positive cases were found in the Western and
+    Midwestern states, with positive cases slowly appearing in the
+    Southern and Eastern states.
 
     -   Our results also show that the amount of positive CWD cases is
         increasing over time.
