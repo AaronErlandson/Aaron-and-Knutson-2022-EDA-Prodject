@@ -27,6 +27,8 @@ Minnesota State University Moorhead Biosciences Department
     -   Has an incubation of over a year, and symptoms develop slowly
         over time.
 
+![](Poster%20picture%201.jpg)
+
 -   First discovered in Colorado
 
     -   First positive case in captive cervids in 1967
