@@ -1,50 +1,20 @@
 ---
-title: "Thomas Markdown Scratchwork"
-author: "Thomas Knutson"
-date: '2022-04-19'
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
----
 output: github_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE,
+	cache=TRUE
+)
 library(tidyverse)
 ```
 
 ## Exploring Chronic Wasting Disease in Minnesota and the United States
 
-Authors
-
 Aaron Erlandson, Thomas Knutson
-
-Affiliations
 
 Minnesota State University Moorhead Biosciences Department
 
@@ -110,7 +80,7 @@ Minnesota State University Moorhead Biosciences Department
 
 ## Results
 
-```{r}
+```{r read data, message=FALSE, warning=FALSE, fig.width =5, fig.height =3}
 #Thomas' stuff
 library(googlesheets4)
 library(tidyverse)
@@ -119,8 +89,8 @@ library(urbnmapr)
 #Read google sheets data into R
 cwdpositive <- read_sheet('1bazVSrrfMWM6scjJzAvDXBw-EeX2BpK1BI1FRdx5GCk') %>% 
   rename(permitarea=`Permit\nArea`, sampleacquisition=`Sample\nAcquisition`) %>% 
-  mutate(permitarea=factor(permitarea), Year = as.integer(Year)) %>% 
-  print()
+  mutate(permitarea=factor(permitarea), Year = as.integer(Year))
+
 
 distributionofcwdinunitedstates <- read_sheet('https://docs.google.com/spreadsheets/d/1AJFJeUI25nDAGxogKNd7oA70r1roLoU92hv9408OR6Q/edit#gid=0')
 
@@ -135,16 +105,6 @@ captivecountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1Bqnrw1B
 #Data for wild cases by county for national map
 wildcountydata <- read_sheet('https://docs.google.com/spreadsheets/d/1kZsk7IcZDokeosX1HKxCdFl-Dp7uQa4y5KmcNyPrIoI/edit#gid=0')
 
-#Setting up stuff for urbanmapr data
-states %>%
-  ggplot(aes(long, lat, group = group)) +
-  geom_polygon(fill = "grey", color = "#ffffff", size = 0.25) +
-  coord_map(projection = "albers", lat0 = 39, lat1 = 45)
-
-counties %>%
-  ggplot(aes(long, lat, group = group)) +
-  geom_polygon(fill = "grey", color = "#ffffff", size = 0.05) +
-  coord_map(projection = "albers", lat0 = 39, lat1 = 45)
 
 #Figure 1
 #MN Yearly Cases by Permit Area
@@ -158,7 +118,7 @@ cwdpositive %>%
 
 Figure 1: State totals for positive cases across state hunting permit areas per year
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 2
 #Total samples collected, positive cases collected, positivity rate
 minnesotayearlysamplingdata %>% 
@@ -179,7 +139,7 @@ minnesotayearlysamplingdata %>%
 
 Figure 2: State totals for total collected samples, positive cases, and positivity rare across the state per year
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 3
 #This works Dots are small
 ggplot(data = minnesotayearlysamplingdata) + 
@@ -190,17 +150,19 @@ ggplot(data = minnesotayearlysamplingdata) +
 
 Figure 3: State total positive case results based on the zone the sample was collected in.
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 4
 #This works MN Yearly Cases by Age
 ggplot(data = cwdpositive) + 
   geom_bar(mapping = aes(x = Year, fill = Age))+
   labs(y="Positive Cases", title = "MN Yearly Cases by Age")
+
+  
 ```
 
 Figure 4: State totals for positive cases by age per year
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 5
 #This works MN Yearly Cases by Sex
 ggplot(data = cwdpositive) + 
@@ -210,7 +172,7 @@ ggplot(data = cwdpositive) +
 
 Figure 5: State totals for total positive cases by sex per year.
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 6
 #Bar Chart sample acquisition
 ggplot(data = cwdpositive) + 
@@ -220,7 +182,7 @@ ggplot(data = cwdpositive) +
 
 Figure 6: State totals for positive cases by sample acquisition per year
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 7
 # Bar chart of total_collected_samples vs year
 ggplot(data = usa_cwd,
@@ -231,7 +193,7 @@ ggplot(data = usa_cwd,
 
 Figure 7: Total samples collected across analyzed states per year
 
-```{r}
+```{r, fig.width =6.5, fig.height =5.5}
 #Figure 8
 # Bar chart showing state vs total_positive_samples vs states
 usa_cwd %>%
@@ -243,12 +205,12 @@ usa_cwd %>%
   geom_col(mapping = aes(y = total_positive_samples), fill = "#a6192e") +
   theme_gray(base_size =24 )+
   theme(axis.text.x = element_text(angle = 90)) +
-  labs(y = "Total Number of Positive Samples", x = NULL)
+  labs(y = "Total Positive Samples", x = NULL)
 ```
 
 Figure 8: Total positive cases for each state with a confirmed positive case of CWD
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 9
 # Bar chart of total_positive_samples vs year
 ggplot(data = usa_cwd,
@@ -259,7 +221,7 @@ ggplot(data = usa_cwd,
 
 Figure 9: Total positive samples by species across analyzed states per year.
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 10
 # Bar chart showing species vs total_positive_samples
 ggplot(data = usa_cwd,
@@ -270,7 +232,7 @@ ggplot(data = usa_cwd,
 
 Figure 10: Total positive cases across analyzed states per year
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 11
 # Bar chart showing species vs total_collected_samples
 ggplot(data = usa_cwd,
@@ -281,7 +243,7 @@ ggplot(data = usa_cwd,
 
 Figure 11: Total samples collected by species across analyzed states per year
 
-```{r}
+```{r, fig.width =7, fig.height =4}
 #Figure 12
 #Map of States infected Free Ranging
 states %>% 
@@ -290,13 +252,13 @@ states %>%
   geom_polygon(color = "#ffffff", size = 0.25) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   labs(fill = "Infections?",
-       title="State Wild Cervid Infections")+
+       title="Wild Cervid Infections")+
   theme_grey(base_size = 24)
 ```
 
 Figure 12: (Left) U.S. states containing infections in wild cervids
 
-```{r}
+```{r, fig.width =7, fig.height =4}
 #Figure 13
 #Map of captive cervids by state
 states %>% 
@@ -311,7 +273,7 @@ states %>%
 
 Figure 13: (Right) U.S. states containing infection in captive cervids
 
-```{r}
+```{r, fig.width =6, fig.height =4}
 #Figure 14
 #Wild County Data, works, just need correct size.
 countydata <- counties %>%
@@ -319,17 +281,17 @@ countydata <- counties %>%
               mutate(Wild=1, County=paste0(County," County")), 
             by=c("state_name"="State", "county_name"="County"))
 ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
-  geom_polygon(color = "#ffffff", size = 0.05) +
+  geom_polygon(aes(color = Wild)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   guides(fill="none")+
-  labs(fill = "Wild Infections",
-       title="Nationwide County Distribution of Infections in Wild Cervids")+
-theme_grey(base_size = 24)
+  labs(fill = "Wild Infections", color = "Wild Infections",
+       title="Nationwide County Distribution of Infections in Wild Cervids")
+
 ```
 
 Figure 14: (Left) U.S. counties containing infections in wild cervids
 
-```{r}
+```{r, fig.width =6, fig.height =4}
 #Figure 15
 #Counties Captive, works
 captive <- counties %>%
@@ -337,11 +299,10 @@ captive <- counties %>%
               mutate( County=paste0(County," County")), 
             by=c("state_name"="State", "county_name"="County"))
 ggplot(captive, mapping = aes(long, lat, group = group, fill = Count)) +
-  geom_polygon(color = "#ffffff", size = 0.05) +
+  geom_polygon(aes(color=Count)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
-  labs(fill = "Captive Infections",
-       title="Captive Cervid Infections by County")+
-  theme_grey(base_size = 24)
+  labs(fill = "Captive Infections", color="Captive Infections",
+       title="Captive Cervid Infections by County")
 ```
 
 Figure 15: (Right) U.S. counties containing infections in captive cervids
@@ -350,7 +311,7 @@ Figure 15: (Right) U.S. counties containing infections in captive cervids
 
 -   Landscape of CWD in the United States
 
-        Based on our mapping of CWD cases across the United States, we found that the majority of positive cases were found in the Western and Midwestern states, with positive cases slowly appearing in the Southern and Eastern states.
+    Based on our mapping of CWD cases across the United States, we found that the majority of positive cases were found in the Western and Midwestern states, with positive cases slowly appearing in the Southern and Eastern states.
 
     -   Our results also show that the amount of positive CWD cases is increasing over time.
 
