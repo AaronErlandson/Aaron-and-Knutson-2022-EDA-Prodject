@@ -1,11 +1,7 @@
 
 ## Exploring Chronic Wasting Disease in Minnesota and the United States
 
-Authors
-
 Aaron Erlandson, Thomas Knutson
-
-Affiliations
 
 Minnesota State University Moorhead Biosciences Department
 

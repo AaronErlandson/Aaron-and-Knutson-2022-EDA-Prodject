@@ -14,11 +14,7 @@ library(tidyverse)
 
 ## Exploring Chronic Wasting Disease in Minnesota and the United States
 
-Authors
-
 Aaron Erlandson, Thomas Knutson
-
-Affiliations
 
 Minnesota State University Moorhead Biosciences Department
 
@@ -197,7 +193,7 @@ ggplot(data = usa_cwd,
 
 Figure 7: Total samples collected across analyzed states per year
 
-```{r}
+```{r, fig.width =6.5, fig.height =5.5}
 #Figure 8
 # Bar chart showing state vs total_positive_samples vs states
 usa_cwd %>%
@@ -209,12 +205,12 @@ usa_cwd %>%
   geom_col(mapping = aes(y = total_positive_samples), fill = "#a6192e") +
   theme_gray(base_size =24 )+
   theme(axis.text.x = element_text(angle = 90)) +
-  labs(y = "Total Number of Positive Samples", x = NULL)
+  labs(y = "Total Positive Samples", x = NULL)
 ```
 
 Figure 8: Total positive cases for each state with a confirmed positive case of CWD
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 9
 # Bar chart of total_positive_samples vs year
 ggplot(data = usa_cwd,
@@ -225,7 +221,7 @@ ggplot(data = usa_cwd,
 
 Figure 9: Total positive samples by species across analyzed states per year.
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 10
 # Bar chart showing species vs total_positive_samples
 ggplot(data = usa_cwd,
@@ -236,7 +232,7 @@ ggplot(data = usa_cwd,
 
 Figure 10: Total positive cases across analyzed states per year
 
-```{r}
+```{r, fig.width =5, fig.height =3}
 #Figure 11
 # Bar chart showing species vs total_collected_samples
 ggplot(data = usa_cwd,
@@ -247,7 +243,7 @@ ggplot(data = usa_cwd,
 
 Figure 11: Total samples collected by species across analyzed states per year
 
-```{r}
+```{r, fig.width =7, fig.height =4}
 #Figure 12
 #Map of States infected Free Ranging
 states %>% 
@@ -256,13 +252,13 @@ states %>%
   geom_polygon(color = "#ffffff", size = 0.25) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   labs(fill = "Infections?",
-       title="State Wild Cervid Infections")+
+       title="Wild Cervid Infections")+
   theme_grey(base_size = 24)
 ```
 
 Figure 12: (Left) U.S. states containing infections in wild cervids
 
-```{r}
+```{r, fig.width =7, fig.height =4}
 #Figure 13
 #Map of captive cervids by state
 states %>% 
@@ -277,7 +273,7 @@ states %>%
 
 Figure 13: (Right) U.S. states containing infection in captive cervids
 
-```{r}
+```{r, fig.width =6, fig.height =4}
 #Figure 14
 #Wild County Data, works, just need correct size.
 countydata <- counties %>%
@@ -285,17 +281,17 @@ countydata <- counties %>%
               mutate(Wild=1, County=paste0(County," County")), 
             by=c("state_name"="State", "county_name"="County"))
 ggplot(countydata, mapping = aes(long, lat, group = group, fill = Wild)) +
-  geom_polygon(color = "#ffffff", size = 0.05) +
+  geom_polygon(aes(color = Wild)) +
   coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
   guides(fill="none")+
-  labs(fill = "Wild Infections",
-       title="Nationwide County Distribution of Infections in Wild Cervids")+
-theme_grey(base_size = 24)
+  labs(fill = "Wild Infections", color = "Wild Infections",
+       title="Nationwide County Distribution of Infections in Wild Cervids")
+
 ```
 
 Figure 14: (Left) U.S. counties containing infections in wild cervids
 
-```{r}
+```{r, fig.width =6, fig.height =4}
 #Figure 15
 #Counties Captive, works
 captive <- counties %>%
