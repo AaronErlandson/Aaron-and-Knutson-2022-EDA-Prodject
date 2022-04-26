@@ -34,6 +34,10 @@ Minnesota State University Moorhead Biosciences Department
 
     -   Has an incubation of over a year, and symptoms develop slowly over time.
 
+        ```{r}
+        ![Image of CWD infected deer](Poster picture 1.jpg)
+        ```
+
 -   First discovered in Colorado
 
     -   First positive case in captive cervids in 1967
