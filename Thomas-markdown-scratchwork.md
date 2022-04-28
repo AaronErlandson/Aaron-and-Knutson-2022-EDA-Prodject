@@ -27,7 +27,7 @@ Minnesota State University Moorhead Biosciences Department
     -   Has an incubation of over a year, and symptoms develop slowly
         over time.
 
-![](Poster%20picture%201.jpg)
+<img src="Poster picture 1.jpg" width="596"/>
 
 -   First discovered in Colorado
 
@@ -96,72 +96,71 @@ Minnesota State University Moorhead Biosciences Department
 
 ## Results
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/read%20data-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/read%20data%20and%20Figure%201-1.png)<!-- -->
 
 Figure 1: State totals for positive cases across state hunting permit
 areas per year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%202-1.png)<!-- -->
 
 Figure 2: State totals for total collected samples, positive cases, and
 positivity rare across the state per year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%203-1.png)<!-- -->
 
 Figure 3: State total positive case results based on the zone the sample
 was collected in.
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%204-1.png)<!-- -->
 
 Figure 4: State totals for positive cases by age per year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%205-1.png)<!-- -->
 
 Figure 5: State totals for total positive cases by sex per year.
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%206-1.png)<!-- -->
 
 Figure 6: State totals for positive cases by sample acquisition per year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%207-1.png)<!-- -->
 
 Figure 7: Total samples collected across analyzed states per year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%208-1.png)<!-- -->
 
 Figure 8: Total positive cases for each state with a confirmed positive
 case of CWD
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%209-1.png)<!-- -->
 
 Figure 9: Total positive samples by species across analyzed states per
 year.
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2010-1.png)<!-- -->
 
 Figure 10: Total positive cases across analyzed states per year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2011-1.png)<!-- -->
 
 Figure 11: Total samples collected by species across analyzed states per
 year
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2012-1.png)<!-- -->
 
-Figure 12: (Left) U.S. states containing infections in wild cervids
+Figure 12: U.S. states containing infections in wild cervids
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2013-1.png)<!-- -->
 
-Figure 13: (Right) U.S. states containing infection in captive cervids
+Figure 13: U.S. states containing infection in captive cervids
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2014-1.png)<!-- -->
 
-Figure 14: (Left) U.S. counties containing infections in wild cervids
+Figure 14: U.S. counties containing infections in wild cervids
 
-![](Thomas-markdown-scratchwork_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2015-1.png)<!-- -->
 
-Figure 15: (Right) U.S. counties containing infections in captive
-cervids
+Figure 15: U.S. counties containing infections in captive cervids
 
 ## Discussion
 
@@ -254,109 +253,107 @@ zoonotic potential of chronic wasting disease. 2012;18(3):369–376.
 <https://www.ncbi.nlm.nih.gov/pubmed/22377159.>
 <doi:10.3201/eid1803.110685>
 
--   Richards, B.J., 2021, Chronic Wasting Disease distribution in the
-    United States by state and county: U.S. Geological Survey data
-    release, <https://doi.org/10.5066/P9HQKKFO>.
+Richards, B.J., 2021, Chronic Wasting Disease distribution in the United
+States by state and county: U.S. Geological Survey data release,
+<https://doi.org/10.5066/P9HQKKFO>.
 
--   To see the list of state agencies we used to collect our national
-    data as well as a map of Minnesota permit zones, scan this QR to
-    visit the GitHub repository for this study where you can view this
-    information.
+To see the list of state agencies we used to collect our national data
+as well as a map of Minnesota permit zones, scan this QR to visit the
+GitHub repository for this study where you can view this information.
 
-    -   Minnesota: [Chronic wasting disease management \| Minnesota DNR
-        (state.mn.us)](https://www.dnr.state.mn.us/cwd/index.html)
+-   Minnesota: [Chronic wasting disease management \| Minnesota DNR
+    (state.mn.us)](https://www.dnr.state.mn.us/cwd/index.html)
 
-    -   Alabama: [CWD Information \| Outdoor
-        Alabama](https://www.outdooralabama.com/CWD-Info)
+-   Alabama: [CWD Information \| Outdoor
+    Alabama](https://www.outdooralabama.com/CWD-Info)
 
-    -   Arkansas: [CWD Testing Options
-        (agfc.com)](https://www.agfc.com/en/hunting/big-game/deer/cwd/cwd-test/)
+-   Arkansas: [CWD Testing Options
+    (agfc.com)](https://www.agfc.com/en/hunting/big-game/deer/cwd/cwd-test/)
 
-    -   Colorado: [Colorado Parks & Wildlife - Chronic Wasting Disease
-        (state.co.us)](https://cpw.state.co.us/cwd)
+-   Colorado: [Colorado Parks & Wildlife - Chronic Wasting Disease
+    (state.co.us)](https://cpw.state.co.us/cwd)
 
-    -   Illinois: [Chronic Wasting Disease Management - Chronic Wasting
-        Disease
-        (illinois.gov)](https://www2.illinois.gov/dnr/programs/CWD/Pages/default.aspx)
+-   Illinois: [Chronic Wasting Disease Management - Chronic Wasting
+    Disease
+    (illinois.gov)](https://www2.illinois.gov/dnr/programs/CWD/Pages/default.aspx)
 
-    -   Iowa: [Chronic Wasting Disease in Iowa \| Natural Resource
-        Stewardship
-        (iastate.edu)](https://naturalresources.extension.iastate.edu/wildlife/cwd)
+-   Iowa: [Chronic Wasting Disease in Iowa \| Natural Resource
+    Stewardship
+    (iastate.edu)](https://naturalresources.extension.iastate.edu/wildlife/cwd)
 
-    -   Kansas: [Cervids - Chronic Wasting Disease (CWD)
-        (ks.gov)](https://agriculture.ks.gov/divisions-programs/division-of-animal-health/animal-diseases/chronic-wasting-disease-(cwd))
+-   Kansas: [Cervids - Chronic Wasting Disease (CWD)
+    (ks.gov)](https://agriculture.ks.gov/divisions-programs/division-of-animal-health/animal-diseases/chronic-wasting-disease-(cwd))
 
-    -   Louisiana: [Chronic Wasting Disease \| Louisiana Department of
-        Wildlife and Fisheries](https://www.wlf.louisiana.gov/page/cwd)
+-   Louisiana: [Chronic Wasting Disease \| Louisiana Department of
+    Wildlife and Fisheries](https://www.wlf.louisiana.gov/page/cwd)
 
-    -   Maryland: [Chronic Wasting Disease (CWD) In
-        Maryland](https://dnr.maryland.gov/wildlife/Pages/hunt_trap/CWD_in_Maryland.aspx)
+-   Maryland: [Chronic Wasting Disease (CWD) In
+    Maryland](https://dnr.maryland.gov/wildlife/Pages/hunt_trap/CWD_in_Maryland.aspx)
 
-    -   Michigan: [Chronic Wasting Disease
-        (michigan.gov)](https://www.michigan.gov/dnr/managing-resources/wildlife/cwd#:~:text=Chronic%20wasting%20disease%20has%20now,up%20with%20the%20latest%20news.)
+-   Michigan: [Chronic Wasting Disease
+    (michigan.gov)](https://www.michigan.gov/dnr/managing-resources/wildlife/cwd#:~:text=Chronic%20wasting%20disease%20has%20now,up%20with%20the%20latest%20news.)
 
-    -   Mississippi: [MDWFP - Chronic Wasting
-        Disease](https://www.mdwfp.com/wildlife-hunting/chronic-wasting-disease/)
+-   Mississippi: [MDWFP - Chronic Wasting
+    Disease](https://www.mdwfp.com/wildlife-hunting/chronic-wasting-disease/)
 
-    -   Missouri: [Chronic Wasting Disease \| Missouri Department of
-        Conservation
-        (mo.gov)](https://mdc.mo.gov/hunting-trapping/species/deer/chronic-wasting-disease#:~:text=Cards,CWD%20and%20limit%20its%20spread.)
+-   Missouri: [Chronic Wasting Disease \| Missouri Department of
+    Conservation
+    (mo.gov)](https://mdc.mo.gov/hunting-trapping/species/deer/chronic-wasting-disease#:~:text=Cards,CWD%20and%20limit%20its%20spread.)
 
-    -   Montana: [CWD Management \| Montana FWP
-        (mt.gov)](https://fwp.mt.gov/cwd)
+-   Montana: [CWD Management \| Montana FWP
+    (mt.gov)](https://fwp.mt.gov/cwd)
 
-    -   Nebraska: [Chronic Wasting Disease (CWD) - Nebraska Game and
-        ParksNebraska Game and Parks \|
-        (outdoornebraska.gov)](http://outdoornebraska.gov/cwd/)
+-   Nebraska: [Chronic Wasting Disease (CWD) - Nebraska Game and
+    ParksNebraska Game and Parks \|
+    (outdoornebraska.gov)](http://outdoornebraska.gov/cwd/)
 
-    -   New Mexico: [Chronic Wasting Disease - New Mexico Department of
-        Game & Fish
-        (state.nm.us)](https://www.wildlife.state.nm.us/conservation/invasive-species-and-diseases/chronic-wasting-disease/)
+-   New Mexico: [Chronic Wasting Disease - New Mexico Department of Game
+    & Fish
+    (state.nm.us)](https://www.wildlife.state.nm.us/conservation/invasive-species-and-diseases/chronic-wasting-disease/)
 
-    -   New York: [Chronic Wasting Disease - NYS Dept. of Environmental
-        Conservation](https://www.dec.ny.gov/animals/7191.html)
+-   New York: [Chronic Wasting Disease - NYS Dept. of Environmental
+    Conservation](https://www.dec.ny.gov/animals/7191.html)
 
-    -   North Dakota: [Chronic Wasting Disease \| North Dakota Game and
-        Fish](https://gf.nd.gov/wildlife/diseases/cwd)
+-   North Dakota: [Chronic Wasting Disease \| North Dakota Game and
+    Fish](https://gf.nd.gov/wildlife/diseases/cwd)
 
-    -   Ohio: [Chronic Wasting Disease (Deer) \| Ohio Department of
-        Natural Resources
-        (ohiodnr.gov)](https://ohiodnr.gov/buy-and-apply/hunting-fishing-boating/hunting-resources/chronic-wasting-disease)
+-   Ohio: [Chronic Wasting Disease (Deer) \| Ohio Department of Natural
+    Resources
+    (ohiodnr.gov)](https://ohiodnr.gov/buy-and-apply/hunting-fishing-boating/hunting-resources/chronic-wasting-disease)
 
-    -   Oklahoma: [Chronic Wasting Disease (CWD) \| Oklahoma Department
-        of Wildlife Conservation
-        (wildlifedepartment.com)](https://www.wildlifedepartment.com/hunting/species/deer/cwd)
+-   Oklahoma: [Chronic Wasting Disease (CWD) \| Oklahoma Department of
+    Wildlife Conservation
+    (wildlifedepartment.com)](https://www.wildlifedepartment.com/hunting/species/deer/cwd)
 
-    -   Pennsylvania: [Chronic Wasting Disease
-        (pa.gov)](https://www.pgc.pa.gov/Wildlife/Wildlife-RelatedDiseases/Pages/ChronicWastingDisease.aspx)
+-   Pennsylvania: [Chronic Wasting Disease
+    (pa.gov)](https://www.pgc.pa.gov/Wildlife/Wildlife-RelatedDiseases/Pages/ChronicWastingDisease.aspx)
 
-    -   South Dakota: [Chronic Wasting Disease (CWD) \| South Dakota
-        Game, Fish, and Parks
-        (sd.gov)](https://gfp.sd.gov/chronic-wasting-disease/)
+-   South Dakota: [Chronic Wasting Disease (CWD) \| South Dakota Game,
+    Fish, and Parks
+    (sd.gov)](https://gfp.sd.gov/chronic-wasting-disease/)
 
-    -   Tennessee: [Chronic Wasting Disease \| Tennessee State Wildlife
-        Resources Agency
-        (tn.gov)](https://www.tn.gov/twra/hunting/cwd.html)
+-   Tennessee: [Chronic Wasting Disease \| Tennessee State Wildlife
+    Resources Agency (tn.gov)](https://www.tn.gov/twra/hunting/cwd.html)
 
-    -   Texas: [Chronic Wasting Disease
-        (texas.gov)](https://tpwd.texas.gov/huntwild/wild/diseases/cwd/)
+-   Texas: [Chronic Wasting Disease
+    (texas.gov)](https://tpwd.texas.gov/huntwild/wild/diseases/cwd/)
 
-    -   Utah: [Chronic wasting disease
-        (utah.gov)](https://wildlife.utah.gov/chronic-wasting-disease.html)
+-   Utah: [Chronic wasting disease
+    (utah.gov)](https://wildlife.utah.gov/chronic-wasting-disease.html)
 
-    -   Virginia: [Chronic Wasting Disease \| Virginia
-        DWR](https://dwr.virginia.gov/wildlife/diseases/cwd/)
+-   Virginia: [Chronic Wasting Disease \| Virginia
+    DWR](https://dwr.virginia.gov/wildlife/diseases/cwd/)
 
-    -   West Virginia: [CHRONIC WASTING DISEASE (CWD)
-        (wv.gov)](https://oeps.wv.gov/cwd/pages/default.aspx)
+-   West Virginia: [CHRONIC WASTING DISEASE (CWD)
+    (wv.gov)](https://oeps.wv.gov/cwd/pages/default.aspx)
 
-    -   Wisconsin:[Sampling for chronic wasting disease (CWD) \| \|
-        Wisconsin
-        DNR](https://dnr.wisconsin.gov/topic/WildlifeHabitat/registersample.html)
+-   Wisconsin:[Sampling for chronic wasting disease (CWD) \| \|
+    Wisconsin
+    DNR](https://dnr.wisconsin.gov/topic/WildlifeHabitat/registersample.html)
 
-    -   Wyoming: [Wyoming Game and Fish Department - Chronic Wasting
-        Disease in Wyoming
-        Wildlife](https://wgfd.wyo.gov/Wildlife-in-Wyoming/More-Wildlife/Wildlife-Disease/Chronic-Wasting-Disease)
+-   Wyoming: [Wyoming Game and Fish Department - Chronic Wasting Disease
+    in Wyoming
+    Wildlife](https://wgfd.wyo.gov/Wildlife-in-Wyoming/More-Wildlife/Wildlife-Disease/Chronic-Wasting-Disease)
 
 ## Acknowledgements
 
