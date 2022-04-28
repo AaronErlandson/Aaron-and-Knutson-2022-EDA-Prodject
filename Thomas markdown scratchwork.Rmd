@@ -208,6 +208,7 @@ usa_cwd %>%
   theme_gray(base_size =18 )+
   theme(axis.text.x = element_text(angle = 90)) +
   labs(y = "Total Positive Samples", x = NULL)
+
 ```
 
 Figure 8: Total positive cases for each state with a confirmed positive case of CWD
@@ -219,9 +220,10 @@ ggplot(data = usa_cwd,
        mapping = aes(x = year)) +
   geom_col(mapping = aes(y = total_positive_samples), fill = "#a6192e") +
   labs(y = "Total Positive Samples", title = "Total Positive Samples Per Year", x = "Year")
+
 ```
 
-Figure 9: Total positive samples by species across analyzed states per year.
+Figure 9. Total positive samples by species across analyzed states per year.
 
 ```{r Figure 10, fig.height=3, fig.width=5}
 #Figure 10
@@ -308,6 +310,10 @@ ggplot(captive, mapping = aes(long, lat, group = group, fill = Count)) +
 ```
 
 Figure 15: U.S. counties containing infections in captive cervids
+
+```{r}
+#Mean
+```
 
 ## Discussion
 

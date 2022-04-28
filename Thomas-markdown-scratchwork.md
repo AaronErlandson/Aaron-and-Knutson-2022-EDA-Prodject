@@ -134,7 +134,7 @@ case of CWD
 
 ![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%209-1.png)<!-- -->
 
-Figure 9: Total positive samples by species across analyzed states per
+Figure 9. Total positive samples by species across analyzed states per
 year.
 
 ![](Thomas-markdown-scratchwork_files/figure-gfm/Figure%2010-1.png)<!-- -->
